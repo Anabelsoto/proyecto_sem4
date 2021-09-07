@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Compra_detalle;
+use App\Models\Compra_detalle;
 
 class Compra_detalleController extends Controller
 {
