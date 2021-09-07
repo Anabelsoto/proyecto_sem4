@@ -7,9 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Hola, esta es la vista de productos</h1>
     <?php
     foreach($productos as $value){
-            echo $value->marca.'<br>';
+            echo "Marca -> ". $value->marca.'<br>';
+            echo "precio -> ". $value->precio.'<br>'.'<br>';
     }
     ?>
 </body>

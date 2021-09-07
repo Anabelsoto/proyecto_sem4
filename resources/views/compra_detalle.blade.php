@@ -10,7 +10,7 @@
     <h2>hola es la sección del detalle de Compra</h2>
     <?php
    foreach($compraAna as $value){
-        echo $value->cantidad.'<br>';
+        echo "Cantidad -> " .$value->cantidad.'<br>';
     }
     ?>
 </body>

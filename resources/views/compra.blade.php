@@ -7,9 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Hola, esta es la vista de Compra</h1>
     <?php
     foreach($comprasA as $value){
-        echo $value ->serie.'<br>';
+        echo "serie -> " .$value ->serie.'<br>';
+        echo "total ->".$value ->total.'<br>'.'<br>';
     }
     ?>
 </body>

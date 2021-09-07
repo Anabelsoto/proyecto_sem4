@@ -10,7 +10,7 @@
     <h1>hola esta es la vista de Usuarios</h1>
     <?php
     foreach($usuarios as $value){
-            echo $value->ape_nom.'<br>';
+            echo "Nombres de Usaurio -> ". $value->ape_nom.'<br>';
     }
     ?>
 </body>

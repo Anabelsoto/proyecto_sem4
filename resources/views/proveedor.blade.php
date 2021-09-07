@@ -7,10 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>RUC de los proveedores</h1>
+    <h1>Hola, es la vista de Proveedores </h1>
+
     <?php
         foreach($proveedor as $value){
-                echo $value->RUC.'<br>';
+                echo "RUC -> ".$value->RUC.'<br>';
+                echo "Dirección -> ".$value->direccion.'<br>'.'<br>';
         }
 
     ?>
