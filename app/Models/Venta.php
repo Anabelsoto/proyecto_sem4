@@ -8,5 +8,6 @@ class Venta extends Model
 {
     //
     public $table = 'venta';
-    protected $primarykey ='idventa';
+    protected $primaryKey ='idventa';
+    public $timestamps = false;
 }

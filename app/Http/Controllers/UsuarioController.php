@@ -18,7 +18,20 @@ class UsuarioController extends Controller
         $usuario1 = usuario::all();
         return view('usuario')->with('usuarios',$usuario1);
     }
-
+    public function insertar()
+    {
+            $usuario = new Usuario();
+            $usuario ->ape_nom = 'Tantalean Quispe, Pedro';
+            $usuario ->usu_user = 'Pedrotantalean@gmail.com';
+            $usuario ->save();
+    }
+    public function actualizar()
+    {
+            $usuario = Usuario::find(2);
+            $usuario ->ape_nom = 'Tantalean Quispe, Pedro';
+            $usuario ->usu_user = 'Pedrotantalean@gmail.com';
+            $usuario ->save();
+    }
     /**
      * Show the form for creating a new resource.
      *

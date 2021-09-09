@@ -17,6 +17,30 @@ class ClienteController extends Controller
         $cliente1 = Cliente::all();
         return view ('cliente')->with('clientes',$cliente1);
     }
+    public function insertar(Request $request)
+    {
+            $cliente = new Cliente();
+            $cliente ->ape_nom = $request->nombre1;
+            $cliente ->iddocu = '2';
+            $cliente ->numero = '918456230';
+            $cliente ->sexo = 'M';
+            $cliente ->save();
+    }
+    public function actualizar(Request $request)
+            {
+            $cliente = Cliente::find($request->id);
+            $cliente ->ape_nom = $request->nombre;
+            $cliente ->iddocu = '2';
+            $cliente ->numero = '918456232';
+            $cliente ->sexo = 'F';
+            $cliente ->save();
+            }
+            public function saluda(Request $request)
+            {
+               // dd("hola soy nuevo mensaje");
+               // dd($request->dni);
+               // dd($request->mensaje);
+            }
 
     /**
      * Show the form for creating a new resource.

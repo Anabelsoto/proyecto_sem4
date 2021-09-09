@@ -19,7 +19,24 @@ class ProveedorController extends Controller
      
         return view('proveedor')->with('proveedor',$proveedores);
     }
-
+     public function insertar()
+    {
+            $proveedor = new Proveedor();
+            $proveedor ->RUC = '20406525689';
+            $proveedor ->numero = '01-23568';
+            $proveedor ->celular = '963258417';
+            $proveedor ->direccion = 'Jr. el sol 4556';
+            $proveedor ->save();
+    }
+    public function actualizar()
+    {
+            $proveedor = Proveedor::find(1);
+            $proveedor ->RUC = '20406525189';
+            $proveedor ->numero = '01-23568';
+            $proveedor ->celular = '963288417';
+            $proveedor ->direccion = 'Jr. el sol 4556';
+            $proveedor ->save();
+    }
     /**
      * Show the form for creating a new resource.
      *

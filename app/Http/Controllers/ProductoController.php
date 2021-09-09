@@ -18,6 +18,26 @@ class ProductoController extends Controller
         $productos = producto::all();
         return view ('producto')->with('productos',$productos);
     }
+    public function insertar()
+    {
+            $producto = new Producto();
+            $producto ->marca = 'Sony';
+            $producto ->modelo = '2BM';
+            $producto ->descripcion = 'color rojo';
+            $producto ->stock = '4';
+            $producto ->precio = '250';
+            $producto ->save();
+    }
+    public function actualizar()
+    {
+            $producto = Producto::find(1);
+            $producto ->marca = 'Sony';
+            $producto ->modelo = '2BM';
+            $producto ->descripcion = 'color rojo';
+            $producto ->stock = '4';
+            $producto ->precio = '250';
+            $producto ->save();
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -8,5 +8,6 @@ class Cliente extends Model
 {
     //
     public $table ='cliente';
-    protected $primarykey ='idcliente';
+    protected $primaryKey ='idcliente';
+    public $timestamps = false;
 }

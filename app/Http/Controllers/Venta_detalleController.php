@@ -17,6 +17,41 @@ class Venta_detalleController extends Controller
         $VentaDeta = Venta_detalle::all();
         return view ('venta_detalle')->with('venta_Anabel',$VentaDeta);
     }
+    public function insertar()
+    {
+            $venta_detalle = new Venta_detalle();
+            $venta_detalle ->idventa = '1';
+            $venta_detalle ->idproducto = '2';
+            $venta_detalle ->descripcion = 'calidad superior B';
+
+            $precio1=185;
+            $cantidad1=3;
+            $total1=$precio1*$cantidad1;
+
+
+            $venta_detalle ->precio = $precio1;
+            $venta_detalle ->cantidad = $cantidad1;
+            $venta_detalle ->total = $total1;
+            $venta_detalle ->save();
+    }
+    public function actualizar()
+    {
+            $venta_detalle = Venta_detalle::find(1);
+            $venta_detalle ->idventa = '1';
+            $venta_detalle ->idproducto = '2';
+            $venta_detalle ->descripcion = 'calidad superior A';
+
+            $precio1=185;
+            $cantidad1=3;
+            $total1=$precio1*$cantidad1;
+
+
+            $venta_detalle ->precio = $precio1;
+            $venta_detalle ->cantidad = $cantidad1;
+            $venta_detalle ->total = $total1;
+            $venta_detalle ->save();
+    }
+
 
     /**
      * Show the form for creating a new resource.

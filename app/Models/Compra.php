@@ -8,5 +8,6 @@ class Compra extends Model
 {
     //
     public $table = 'compra';
-    protected $primarykey = 'idcompra';
+    protected $primaryKey = 'idcompra';
+    public $timestamps = false;
 }

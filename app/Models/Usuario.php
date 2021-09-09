@@ -8,5 +8,6 @@ class Usuario extends Model
 {
     //
     public $table = 'usuario';
-    protected $primarykey ='idusuario';
+    protected $primaryKey ='idusuario';
+    public $timestamps = false;
 }

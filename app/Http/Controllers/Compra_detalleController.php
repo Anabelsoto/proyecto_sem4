@@ -18,6 +18,38 @@ class Compra_detalleController extends Controller
         $compraDeta = Compra_detalle::all();
         return view('compra_detalle')->with('compraAna',$compraDeta);
     }
+    public function insertar()
+    {
+            $compra_detalle = new Compra_detalle();
+            $compra_detalle ->idcompra = '1';
+            $compra_detalle ->idproducto = '2';
+            $compra_detalle ->descripcion = 'calidad superior';
+
+             $precio = 125;
+            $cantidad =3;
+            $total1=$precio*$cantidad;
+
+            $compra_detalle ->precio = $precio;
+            $compra_detalle ->cantidad = $cantidad;
+            $compra_detalle ->total = $total1;
+            $compra_detalle ->save();
+    }
+    public function actualizar()
+    {
+            $compra_detalle = Compra_detalle::find(4);
+            $compra_detalle ->idcompra = '1';
+            $compra_detalle ->idproducto = '2';
+            $compra_detalle ->descripcion = 'calidad Premium';
+
+            $precio = 129;
+            $cantidad =2;
+            $total1=$precio*$cantidad;
+
+            $compra_detalle ->precio = $precio;
+            $compra_detalle ->cantidad = $cantidad;
+            $compra_detalle ->total = $total1;
+            $compra_detalle ->save();
+    }
 
     /**
      * Show the form for creating a new resource.

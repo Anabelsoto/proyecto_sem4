@@ -18,6 +18,38 @@ class CompraController extends Controller
         return view('compra')->with('comprasA',$compras);
 
     }
+    public function insertar()
+    {
+            $compra = new Compra();
+            $compra ->serie = '001';
+            $compra ->num_correl = '5';
+            $compra ->fecha_rec = '2021-09-05';
+
+            $total=1180;
+            $sub_tot=$total/1.18;
+            $igv=$sub_tot*0.18;
+
+            $compra ->igv_total = $igv;
+            $compra ->sub_total = $sub_tot;
+            $compra ->total = $total;
+            $compra ->save();
+    }
+    public function actualizar()
+    {
+            $compra = Compra::find(1);
+            $compra ->serie = '001';
+            $compra ->num_correl = '5';
+            $compra ->fecha_rec = '2021-09-05';
+
+             $total=1180;
+            $sub_tot=$total/1.18;
+            $igv=$sub_tot*0.18;
+
+            $compra ->igv_total = $igv;
+            $compra ->sub_total = $sub_tot;
+            $compra ->total = $total;
+            $compra ->save();
+    }
 
     /**
      * Show the form for creating a new resource.
