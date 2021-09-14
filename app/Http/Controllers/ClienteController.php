@@ -35,8 +35,12 @@ class ClienteController extends Controller
             $cliente ->sexo = 'F';
             $cliente ->save();
             }
-            public function saluda(Request $request)
+public function saluda(Request $request)
             {
+                $var1 = $request->nombre;
+
+                dd("hola este es un mensaje de la función saludo");
+               // dd($request -> mensajito);
                // dd("hola soy nuevo mensaje");
                // dd($request->dni);
                // dd($request->mensaje);

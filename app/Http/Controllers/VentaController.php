@@ -19,7 +19,7 @@ class VentaController extends Controller
         $ventas = Venta::all();
         return view ('venta')->with('ventas',$ventas);
     }
-    public function insertar()
+    /*public function insertar()
     {
             $venta = new Venta();
             $venta ->serie = '001';
@@ -32,6 +32,22 @@ class VentaController extends Controller
 
             $venta ->igv_total = $igvtotal1;
             $venta ->sub_total = $sub_total1;
+            $venta ->total = $total1;
+            $venta ->save();
+    }*/
+    public function insertar(Request $request)
+    {
+            $venta = new Venta();
+            $venta ->serie = $request->serie;
+            $venta ->num_correl =$request->num_correl;
+            $venta ->fecha_emi =$request->fecha_emi;
+            
+            $total1=$request->total;
+            $sub_total1=$total1/1.18;
+            $igvtotal1=$sub_total1*.18;
+
+            $venta ->igv_total =$igvtotal1;
+            $venta ->sub_total =$sub_total1;
             $venta ->total = $total1;
             $venta ->save();
     }

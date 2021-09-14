@@ -18,11 +18,18 @@ class UsuarioController extends Controller
         $usuario1 = usuario::all();
         return view('usuario')->with('usuarios',$usuario1);
     }
-    public function insertar()
+   /* public function insertar()
     {
             $usuario = new Usuario();
             $usuario ->ape_nom = 'Tantalean Quispe, Pedro';
             $usuario ->usu_user = 'Pedrotantalean@gmail.com';
+            $usuario ->save();
+    }*/
+    public function insertar(Request $request)
+    {
+            $usuario = new Usuario();
+            $usuario ->ape_nom = $request->ape_nom;
+            $usuario ->usu_user =$request->usu_user;
             $usuario ->save();
     }
     public function actualizar()

@@ -18,21 +18,21 @@ class CompraController extends Controller
         return view('compra')->with('comprasA',$compras);
 
     }
-    public function insertar()
+    public function insertar(Request $request)
     {
             $compra = new Compra();
-            $compra ->serie = '001';
-            $compra ->num_correl = '5';
-            $compra ->fecha_rec = '2021-09-05';
+            $compra ->serie = $request->serie;
+            $compra ->num_correl = $request->num_correl;
+            $compra ->fecha_rec = $request->fecha_rec;
 
-            $total=1180;
-            $sub_tot=$total/1.18;
+            $total1=$request->total;
+            $sub_tot=$total1/1.18;
             $igv=$sub_tot*0.18;
 
-            $compra ->igv_total = $igv;
-            $compra ->sub_total = $sub_tot;
-            $compra ->total = $total;
-            $compra ->save();
+            $compra->igv_total = $igv;
+            $compra->sub_total =$sub_tot;
+            $compra->total = $total1;
+            $compra->save();
     }
     public function actualizar()
     {

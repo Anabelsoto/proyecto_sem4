@@ -18,7 +18,7 @@ class ProductoController extends Controller
         $productos = producto::all();
         return view ('producto')->with('productos',$productos);
     }
-    public function insertar()
+   /* public function insertar()
     {
             $producto = new Producto();
             $producto ->marca = 'Sony';
@@ -26,6 +26,16 @@ class ProductoController extends Controller
             $producto ->descripcion = 'color rojo';
             $producto ->stock = '4';
             $producto ->precio = '250';
+            $producto ->save();
+    }*/
+     public function insertar(Request $request)
+    {
+            $producto = new Producto();
+            $producto ->marca =$request->marca;
+            $producto ->modelo =$request->modelo;
+            $producto ->descripcion =$request->descripcion;
+            $producto ->stock =$request->stock;
+            $producto ->precio =$request->precio;
             $producto ->save();
     }
     public function actualizar()

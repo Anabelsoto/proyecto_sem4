@@ -17,7 +17,7 @@ class Venta_detalleController extends Controller
         $VentaDeta = Venta_detalle::all();
         return view ('venta_detalle')->with('venta_Anabel',$VentaDeta);
     }
-    public function insertar()
+    /*public function insertar()
     {
             $venta_detalle = new Venta_detalle();
             $venta_detalle ->idventa = '1';
@@ -26,6 +26,23 @@ class Venta_detalleController extends Controller
 
             $precio1=185;
             $cantidad1=3;
+            $total1=$precio1*$cantidad1;
+
+
+            $venta_detalle ->precio = $precio1;
+            $venta_detalle ->cantidad = $cantidad1;
+            $venta_detalle ->total = $total1;
+            $venta_detalle ->save();
+    }*/
+    public function insertar(Request $request)
+    {
+            $venta_detalle = new Venta_detalle();
+            $venta_detalle ->idventa =$request->idventa;
+            $venta_detalle ->idproducto =$request->idproducto;
+            $venta_detalle ->descripcion =$request->descripcion;
+
+            $precio1=$request->precio;
+            $cantidad1=$request->cantidad;
             $total1=$precio1*$cantidad1;
 
 

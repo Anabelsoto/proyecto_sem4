@@ -19,13 +19,23 @@ class ProveedorController extends Controller
      
         return view('proveedor')->with('proveedor',$proveedores);
     }
-     public function insertar()
+    /* public function insertar()
     {
             $proveedor = new Proveedor();
             $proveedor ->RUC = '20406525689';
             $proveedor ->numero = '01-23568';
             $proveedor ->celular = '963258417';
             $proveedor ->direccion = 'Jr. el sol 4556';
+            $proveedor ->save();
+    }*/
+    public function insertar(Request $request)
+    {
+            $proveedor = new Proveedor();
+            $proveedor ->RUC = $request->RUC;
+            $proveedor->iddocu=$request->iddocu;
+            $proveedor ->numero = $request->numero;
+            $proveedor ->celular = $request->celular;
+            $proveedor ->direccion =$request->direccion;
             $proveedor ->save();
     }
     public function actualizar()
