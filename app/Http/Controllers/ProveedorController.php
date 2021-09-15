@@ -38,13 +38,22 @@ class ProveedorController extends Controller
             $proveedor ->direccion =$request->direccion;
             $proveedor ->save();
     }
-    public function actualizar()
+   /* public function actualizar()
     {
             $proveedor = Proveedor::find(1);
             $proveedor ->RUC = '20406525189';
             $proveedor ->numero = '01-23568';
             $proveedor ->celular = '963288417';
             $proveedor ->direccion = 'Jr. el sol 4556';
+            $proveedor ->save();
+    }*/
+    public function actualizar(Request $request)
+    {
+            $proveedor = Proveedor::find(1);
+            $proveedor ->RUC = $request->RUC;
+            $proveedor ->numero = $request->numero;
+            $proveedor ->celular = $request->celular;
+            $proveedor ->direccion = $request->direccion;
             $proveedor ->save();
     }
     /**

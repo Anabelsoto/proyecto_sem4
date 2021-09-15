@@ -38,14 +38,14 @@ class ProductoController extends Controller
             $producto ->precio =$request->precio;
             $producto ->save();
     }
-    public function actualizar()
+    public function actualizar(Request $request)
     {
-            $producto = Producto::find(1);
-            $producto ->marca = 'Sony';
-            $producto ->modelo = '2BM';
-            $producto ->descripcion = 'color rojo';
-            $producto ->stock = '4';
-            $producto ->precio = '250';
+            $producto = Producto::find(3);
+            $producto ->marca = $request->marca;
+            $producto ->modelo =$request->modelo;
+            $producto ->descripcion =$request->descripcion;
+            $producto ->stock =$request->stock;
+            $producto ->precio =$request->precio;
             $producto ->save();
     }
 

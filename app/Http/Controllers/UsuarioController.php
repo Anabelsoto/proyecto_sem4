@@ -32,11 +32,18 @@ class UsuarioController extends Controller
             $usuario ->usu_user =$request->usu_user;
             $usuario ->save();
     }
-    public function actualizar()
+   /* public function actualizar()
     {
             $usuario = Usuario::find(2);
             $usuario ->ape_nom = 'Tantalean Quispe, Pedro';
             $usuario ->usu_user = 'Pedrotantalean@gmail.com';
+            $usuario ->save();
+    }*/
+    public function actualizar(Request $request)
+    {
+            $usuario = Usuario::find(2);
+            $usuario ->ape_nom = $request->ape_nom;
+            $usuario ->usu_user = $request->usu_user;
             $usuario ->save();
     }
     /**

@@ -50,7 +50,7 @@ class Compra_detalleController extends Controller
             $compra_detalle ->total = $total1;
             $compra_detalle ->save();
     }
-    public function actualizar()
+   /* public function actualizar()
     {
             $compra_detalle = Compra_detalle::find(4);
             $compra_detalle ->idcompra = '1';
@@ -59,6 +59,22 @@ class Compra_detalleController extends Controller
 
             $precio = 129;
             $cantidad =2;
+            $total1=$precio*$cantidad;
+
+            $compra_detalle ->precio = $precio;
+            $compra_detalle ->cantidad = $cantidad;
+            $compra_detalle ->total = $total1;
+            $compra_detalle ->save();
+    }*/
+    public function actualizar(Request $request)
+    {
+            $compra_detalle = Compra_detalle::find(4);
+            $compra_detalle ->idcompra = $request->idcompra;
+            $compra_detalle ->idproducto = $request->idproducto;
+            $compra_detalle ->descripcion = $request->descripcion;
+
+            $precio =$request->precio;
+            $cantidad =$request->cantidad;
             $total1=$precio*$cantidad;
 
             $compra_detalle ->precio = $precio;

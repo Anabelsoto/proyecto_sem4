@@ -34,7 +34,7 @@ class CompraController extends Controller
             $compra->total = $total1;
             $compra->save();
     }
-    public function actualizar()
+   /* public function actualizar()
     {
             $compra = Compra::find(1);
             $compra ->serie = '001';
@@ -42,6 +42,22 @@ class CompraController extends Controller
             $compra ->fecha_rec = '2021-09-05';
 
              $total=1180;
+            $sub_tot=$total/1.18;
+            $igv=$sub_tot*0.18;
+
+            $compra ->igv_total = $igv;
+            $compra ->sub_total = $sub_tot;
+            $compra ->total = $total;
+            $compra ->save();
+    }*/
+    public function actualizar(Request $request)
+    {
+            $compra = Compra::find(2);
+            $compra ->serie =$request->serie;
+            $compra ->num_correl =$request->num_correl;
+            $compra ->fecha_rec =$request->fecha_rec;
+
+             $total=$request->total;
             $sub_tot=$total/1.18;
             $igv=$sub_tot*0.18;
 

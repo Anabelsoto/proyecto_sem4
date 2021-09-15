@@ -51,15 +51,15 @@ class Venta_detalleController extends Controller
             $venta_detalle ->total = $total1;
             $venta_detalle ->save();
     }
-    public function actualizar()
+    public function actualizar(Request $request)
     {
-            $venta_detalle = Venta_detalle::find(1);
-            $venta_detalle ->idventa = '1';
-            $venta_detalle ->idproducto = '2';
-            $venta_detalle ->descripcion = 'calidad superior A';
+            $venta_detalle = Venta_detalle::find(6);
+            $venta_detalle ->idventa =$request->idventa;
+            $venta_detalle ->idproducto =$request->idproducto;
+            $venta_detalle ->descripcion = $request->descripcion;
 
-            $precio1=185;
-            $cantidad1=3;
+            $precio1=$request->precio;
+            $cantidad1=$request->cantidad;
             $total1=$precio1*$cantidad1;
 
 
